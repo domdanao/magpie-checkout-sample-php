@@ -10,7 +10,7 @@ var icon_condo = "https://s3-us-west-2.amazonaws.com/client-objects/sample-app/c
 var app = MagpieCheckout({
     // The publishable key from the Magpie dashboard
     // key: "pk_test_Q6EVrrKQbiA2fOsM2qXstw",
-    key: "pk_test_Q6EVrrKQbiA2fOsM2qXstw",   // for new
+    key: "pk_test_97jCFUDY81vkqsQCLLFXQQ",   // for new
     // The name of the store -- appears on the checkout page
     // name: "E-Commerce Store",
     // The description of the product or service being purchased
@@ -177,5 +177,47 @@ $("#ex_donate").on("click", function(e) {
         allowRememberMe: false,
         name: 'Charity Foundation',
         icon: icon_church
+    });
+})
+
+$("#red_button").on("click", function(e) {
+    e.preventDefault();
+    app.open({
+        currency: 'USD',
+        amount: 9900,
+        description: '99 Red Balloons',
+        payLabel: 'Pay',
+        allowRememberMe: false,
+        billng: true,
+        shipping: true,
+        name: 'Balloon Man'
+    });
+})
+
+$("#shop_cart").on("click", function(e) {
+    e.preventDefault();
+    app.open({
+        currency: 'PHP',
+        amount: 534525,
+        description: 'Your Grocery This Week',
+        payLabel: 'Pay',
+        billng: true,
+        shipping: true,
+        name: 'The Marketplace'
+    });
+})
+
+$("#target").submit(function(e){
+    e.preventDefault();
+    var email = $("input:first").val();
+    app.open({
+        email: email,
+        currency: 'PHP',
+        amount: 534525,
+        description: 'Your Grocery This Week',
+        payLabel: 'Pay',
+        billng: true,
+        shipping: true,
+        name: 'The Marketplace'
     });
 })

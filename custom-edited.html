@@ -344,18 +344,10 @@
                         </div>
                         <div id="collapseThreetoggle1-f" class="panel-collapse noScroll collapse" role="tabpanel" aria-labelledby="headingThree">
                             <div class="panel-body">
-                              <form method="POST" action="/process.php">
-                                <script src="https://checkout.magpie.im/v2/checkout.js"
-                                  class="magpie-button"
-                                  data-name="My Music Library"
-                                  data-key="pk_test_97jCFUDY81vkqsQCLLFXQQ"
-                                  data-amount="99"
-                                  data-currency="USD"
-                                  data-icon="https://s3-us-west-2.amazonaws.com/client-objects/sample-app/music_icon.png"
-                                  data-description="Song of Love (3:55)"
-                                  data-button-label="Buy Now"
-                                  data-email="juan@delacruz.com">
-                                </script>
+                              <!-- Email form-->
+                              <form id="target">
+                                  <input type="email" required pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" placeholder="Your email">
+                                  <input type="submit" value="Pay Now">
                               </form>
                               <br>
                             </div>
