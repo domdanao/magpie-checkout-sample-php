@@ -25,7 +25,9 @@ var app = MagpieCheckout({
     token: function (result) {
         // $("#overlay").show();
         // AJAX stuff, check out jQuery AJAX doc
-        alert(result.token);
+        var pretty = JSON.stringify(result,null,2);
+        console.log(pretty);
+        alert(amount);
     }
 });
     
@@ -71,10 +73,14 @@ var app = MagpieCheckout({
 // Must correspond to the id of the link in index.php
 $("#not_all").on("click", function(e) {
     e.preventDefault();
+    amount = 49900;
+    currency = 'php';
+    description = 'Basic Plan';
+    // Set what will appear in the Checkout form
     app.open({
-        currency: 'PHP',
-        amount: 49900,
-        description: 'Basic plan',
+        currency: currency,
+        amount: amount,
+        description: description,
         name: name,
         icon: icon_store
     });
@@ -82,10 +88,13 @@ $("#not_all").on("click", function(e) {
 
 $("#not_button").on("click", function(e) {
     e.preventDefault();
+    amount = 99900;
+    currency = 'usd';
+    description = 'Standard Plan';
     app.open({
-        currency: 'USD',
-        amount: 99900,
-        description: 'Standard Plan',
+        currency: currency,
+        amount: amount,
+        description: description,
         payLabel: 'Subscribe',
         name: 'Some Cloud Service',
         icon: icon_cloud
@@ -94,23 +103,29 @@ $("#not_button").on("click", function(e) {
 
 $("#start_pkg").on("click", function(e) {
     e.preventDefault();
+    amount = 1900;
+    currency = 'usd';
+    description = 'Start Package (8GB/4U/15GB)';
     app.open({
         name: 'My Cloud Service',
-        currency: 'USD',
-        amount: 1900,
-        description: 'Start Package (8GB/4U/15GB)',
+        currency: currency,
+        amount: amount,
+        description: description,
         payLabel: 'Subscribe',
         icon: icon_cloud
     });
 })
   
-  $("#business_pkg").on("click", function(e) {
+$("#business_pkg").on("click", function(e) {
     e.preventDefault();
+    amount = 2900;
+    currency = 'usd';
+    description = 'Business Package (16GB/10U/20GB)';
     app.open({
         name: 'My Cloud Service',
-        currency: 'USD',
-        amount: 2900,
-        description: 'Business Package (16GB/10U/20GB)',
+        currency: currency,
+        amount: amount,
+        description: description,
         payLabel: 'Subscribe',
         icon: icon_cloud
     });
@@ -118,11 +133,14 @@ $("#start_pkg").on("click", function(e) {
   
   $("#premium_pkg").on("click", function(e) {
     e.preventDefault();
+    amount = 3900;
+    currency = 'usd';
+    description = 'Premium Package (32GB/20U/25GB)';
     app.open({
         name: 'My Cloud Service',
-        currency: 'USD',
-        amount: 3900,
-        description: 'Premium Package (32GB/20U/25GB)',
+        currency: currency,
+        amount: amount,
+        description: description,
         payLabel: 'Subscribe',
         icon: icon_cloud
     });
@@ -130,11 +148,14 @@ $("#start_pkg").on("click", function(e) {
   
 $("#ultimate_pkg").on("click", function(e) {
     e.preventDefault();
+    amount = 4900;
+    currency = 'usd';
+    description = 'Ultimate Package (64GB/Unlimited/35GB)';
     app.open({
         name: 'My Cloud Service',
-        currency: 'USD',
-        amount: 4900,
-        description: 'Ultimate Package (64GB/Unlimited/35GB)',
+        currency: currency,
+        amount: amount,
+        description: description,
         payLabel: 'Subscribe',
         icon: icon_cloud
     });
@@ -142,10 +163,13 @@ $("#ultimate_pkg").on("click", function(e) {
 
 $("#ex_shipping").on("click", function(e) {
     e.preventDefault();
+    amount = 235000;
+    currency = 'php';
+    description = 'A Beautiful Birthday Gift';
     app.open({
-        currency: 'PHP',
-        amount: 235000,
-        description: 'A Beautiful Birthday Gift',
+        currency: currency,
+        amount: amount,
+        description: description,
         payLabel: 'Pay',
         shipping: true,
         billing: true,
@@ -156,10 +180,13 @@ $("#ex_shipping").on("click", function(e) {
   
 $("#ex_billing").on("click", function(e) {
     e.preventDefault();
+    amount = 1250000;
+    currency = 'php';
+    description = 'One Month Rent (Flair Unit N2602)';
     app.open({
-        currency: 'PHP',
-        amount: 1250000,
-        description: 'One Month Rent (Flair Unit N2602)',
+        currency: currency,
+        amount: amount,
+        description: description,
         payLabel: 'Pay',
         billing: true,
         name: 'Condo Corp.',
@@ -169,10 +196,13 @@ $("#ex_billing").on("click", function(e) {
   
 $("#ex_donate").on("click", function(e) {
     e.preventDefault();
+    amount = 500000;
+    currency = 'php';
+    description = 'Give to Children\'s Crusade';
     app.open({
-        currency: 'PHP',
-        amount: 500000,
-        description: 'Give to Children\'s Crusade',
+        currency: currency,
+        amount: amount,
+        description: description,
         payLabel: 'Donate',
         allowRememberMe: false,
         name: 'Charity Foundation',
@@ -182,10 +212,13 @@ $("#ex_donate").on("click", function(e) {
 
 $("#red_button").on("click", function(e) {
     e.preventDefault();
+    amount = 500000;
+    currency = 'usd';
+    description = '99 Red Balloons';
     app.open({
-        currency: 'USD',
-        amount: 9900,
-        description: '99 Red Balloons',
+        currency: currency,
+        amount: amount,
+        description: description,
         payLabel: 'Pay',
         allowRememberMe: false,
         billng: true,
@@ -196,10 +229,13 @@ $("#red_button").on("click", function(e) {
 
 $("#shop_cart").on("click", function(e) {
     e.preventDefault();
+    amount = 534525;
+    currency = 'php';
+    description = 'Your Grocery This Week';
     app.open({
-        currency: 'PHP',
-        amount: 534525,
-        description: 'Your Grocery This Week',
+        currency: currency,
+        amount: amount,
+        description: description,
         payLabel: 'Pay',
         billng: true,
         shipping: true,
@@ -210,11 +246,14 @@ $("#shop_cart").on("click", function(e) {
 $("#target").submit(function(e){
     e.preventDefault();
     var email = $("input:first").val();
+    currency = 'php';
+    amount = 125265
+    description = 'Products and Services';
     app.open({
         email: email,
-        currency: 'PHP',
-        amount: 534525,
-        description: 'Your Grocery This Week',
+        currency: currency,
+        amount: amount,
+        description: description,
         payLabel: 'Pay',
         billng: true,
         shipping: true,
@@ -236,15 +275,15 @@ $("#custom_form").submit(function(e){
     var currency = data[2]["value"];
     // Name of "store"
     var recipient = data[3]["value"];
+    // Description
+    description = 'Your generous donation';
 
     app.open({
         email: email,
         currency: currency,
         amount: amount,
-        description: 'Your Donation',
+        description: description,
         payLabel: 'Pay',
-        // billng: true,
-        // shipping: true,
         name: recipient,
         payLabel: 'Donate'
     });
