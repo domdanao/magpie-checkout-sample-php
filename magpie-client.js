@@ -25,9 +25,12 @@ var app = MagpieCheckout({
     token: function (result) {
         // $("#overlay").show();
         // AJAX stuff, check out jQuery AJAX doc
+        result["amount"] = amount;
+        result["currency"] = currency;
+        result["description"] = description;
         var pretty = JSON.stringify(result,null,2);
         console.log(pretty);
-        alert(amount);
+        alert(pretty);
     }
 });
     
