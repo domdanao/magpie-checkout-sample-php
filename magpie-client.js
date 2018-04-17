@@ -221,3 +221,31 @@ $("#target").submit(function(e){
         name: 'The Marketplace'
     });
 })
+
+
+$("#custom_form").submit(function(e){
+    e.preventDefault();
+    var data = $("#custom_form").serializeArray();
+    console.log(data);
+    // Email
+    var email = data[0]["value"];
+    // Amount: We need to convert float to integer
+    var amount = data[1]["value"] * 100;
+    amount = parseInt(amount);
+    // Currency
+    var currency = data[2]["value"];
+    // Name of "store"
+    var recipient = data[3]["value"];
+
+    app.open({
+        email: email,
+        currency: currency,
+        amount: amount,
+        description: 'Your Donation',
+        payLabel: 'Pay',
+        // billng: true,
+        // shipping: true,
+        name: recipient,
+        payLabel: 'Donate'
+    });
+})
