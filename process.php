@@ -14,7 +14,7 @@ $content .= "<strong>In JSON:</strong><br><pre>$post2</pre>";
     <meta charset="UTF-8">
     <title>Process</title>
     <script src="assets/tingle/tingle.js"></script>
-    <link rel="stylesheet" href="/assets/tingle/tingle.css">
+    <link rel="stylesheet" href="assets/tingle/tingle.css">
   </head>
   <body onload="modal.open();">
 

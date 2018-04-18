@@ -17,8 +17,41 @@
   <link rel="stylesheet" href="assets/dropdown/css/style.css">
   <link rel="stylesheet" href="assets/theme/css/style.css">
   <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
+
+  <script src="assets/tingle/tingle.js"></script>
+  <link rel="stylesheet" href="assets/tingle/tingle.css">
+
+  <!-- <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=default"></script> -->
+  <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.12.0/build/styles/default.min.css"> -->
+  <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.12.0/build/highlight.min.js"></script>
+  <!-- <link rel="stylesheet" href="assets/css/obsidian.css"> -->
+  <link rel="stylesheet" href="assets/css/atom-one-dark.css">
+  <style>
   
+    .button1 {
+      background-color: #e7e7e7;
+      font-size: 12px;
+      padding: 5px 10px;
+      border-radius: 4px;
+      font-family: "Lucida Console", Monaco, monospace;
+      -webkit-transition-duration: 0.4s; /* Safari */
+      transition-duration: 0.4s;
+    }
+
+    .button1:hover {
+      background-color: black;
+      color: white;
+      }
+
+    td {
+      vertical-align: bottom;
+    }
+
+    .tingle-demo {
+      display: none;
+    }
   
+  </style>
   
 </head>
 <body>
@@ -31,7 +64,7 @@
                     <div class="mbr-table-cell logo">
     
                         <div class="navbar-brand">
-                            <a href="https://magpie.IM" class="navbar-logo"><img src="assets/images/magpie-logo-round-big-128x128.png" alt="Magpie Icon" style="height: 5rem;"></a>
+                            <a href="https://magpie.im" class="navbar-logo"><img src="assets/images/magpie-logo-round-big-128x128.png" alt="Magpie Icon" style="height: 5rem;"></a>
                             
                         </div>
     
@@ -74,20 +107,31 @@
 
                     <h1 class="mbr-section-title display-1 heading-title"><br>Simple integration</h1>
                     <p class="mbr-section-subtitle sub-2 heading-text"><br>This panel shows the simple integration for creating a PayButton via Magpie's Checkout v2 product. With simple integration, you include the script tag that loads the checkout.js file. Provide a class magpie-button in the tag to automatically create the button that triggers Checkout.</p>
-                        <form method="POST" action="/process.php">
-                            <script src="https://checkout.magpie.im/v2/checkout.js"
-                                class="magpie-button"
-                                data-name="Rock & Roll Concert"
-                                data-key="pk_test_97jCFUDY81vkqsQCLLFXQQ"
-                                data-amount="225000"
-                                data-currency="PHP"
-                                data-icon="https://s3-us-west-2.amazonaws.com/client-objects/sample-app/conert-icon.png"
-                                data-description="1 Box ticket"> 
-                            </script>
-                        </form>
+                        <table>
+                          <tr>
+                            <td>
+                              <!--Simple form to create PayButton-->
+                              <form method="POST" action="/process.php">
+                                <script src="https://checkout.magpie.im/v2/checkout.js"
+                                  class="magpie-button"
+                                  data-name="Rock & Roll Concert"
+                                  data-key="pk_test_97jCFUDY81vkqsQCLLFXQQ"
+                                  data-amount="225000"
+                                  data-currency="PHP"
+                                  data-icon="https://s3-us-west-2.amazonaws.com/client-objects/sample-app/conert-icon.png"
+                                  data-description="1 Box ticket"> 
+                                </script>
+                            </form>
+                            </td>
+                            <td style="padding:2px;"></td>
+                            <td>
+                                <form><input type="button" value="View Code" class="button1 modal1"></form>
+                            </td>
+                          </tr>
+                        </table>
+                        
                         <br>
                         <p class="mbr-section-subtitle sub-2 heading-text">This is one of the simplest buttons you can create.</p>
-                    
                 </div>
             </div>
         </div>
@@ -136,20 +180,31 @@
                   </div>
 
                   <div class="left-button text-lg-left text-sm-center">
-                        <form method="POST" action="/process.php">
+                    <table>
+                      <tr>
+                        <td>
+                          <form method="POST" action="/process.php">
                             <script src="https://checkout.magpie.im/v2/checkout.js"
-                                class="magpie-button"
-                                data-name="My Online Store"
-                                data-key="pk_test_97jCFUDY81vkqsQCLLFXQQ"
-                                data-amount="250000"
-                                data-currency="PHP"
-                                data-icon="https://s3-us-west-2.amazonaws.com/client-objects/sample-app/online-store.png"
-                                data-description="1-Month subscription; Up to 5 users"
-                                data-billing="true"
-                                data-pay-label="Pay"
-                                data-button-label="Subscribe P2,500.00">
+                              class="magpie-button"
+                              data-name="My Online Store"
+                              data-key="pk_test_97jCFUDY81vkqsQCLLFXQQ"
+                              data-amount="250000"
+                              data-currency="PHP"
+                              data-icon="https://s3-us-west-2.amazonaws.com/client-objects/sample-app/online-store.png"
+                              data-description="1-Month subscription; Up to 5 users"
+                              data-billing="true"
+                              data-pay-label="Pay"
+                              data-button-label="Subscribe P2,500.00">
                             </script>
-                        </form>
+                          </form>
+                        </td>
+                        <td style="padding:5px;"></td>
+                        <td>
+                            <form><input type="button" value="View Code" class="button1 modal2"></form>
+                        </td>
+                      </tr>
+                    </table>
+                        
                     </div>
               </div>
             </div>
@@ -200,6 +255,7 @@
                   data-button-label="Subscribe">
               </script>
           </form>
+          <br>
 
           </div>
         </div>
@@ -234,6 +290,7 @@
                   data-button-label="Subscribe">
               </script>
           </form>
+          <br>
           
           </div>
         </div>
@@ -267,6 +324,7 @@
                   data-button-label="Subscribe">
               </script>
           </form>
+          <br>
           </div>
         </div>
 
@@ -299,6 +357,7 @@
                   data-button-label="Subscribe">
               </script>
           </form>
+          <br>
           </div>
         </div>
       </div>
@@ -608,7 +667,87 @@
   <script src="assets/dropdown/js/script.min.js"></script>
   <script src="assets/touch-swipe/jquery.touch-swipe.min.js"></script>
   <script src="assets/theme/js/script.js"></script>
+
+  <div class="tingle-demo tingle-demo-sticky1">
+    <h2>Simple button</h2>
+    <p>Copy and paste it on an HTML page</p>
+    <pre>
+    <code class="html">
+&lt;form method="POST" action="/process.php"&gt;
+  &lt;script src="https://checkout.magpie.im/v2/checkout.js"
+    class="magpie-button"
+    data-name="Rock &amp; Roll Concert"
+    data-key="pk_test_97jCFUDY81vkqsQCLLFXQQ"
+    data-amount="225000"
+    data-currency="PHP"
+    data-icon="https://s3-us-west-2.amazonaws.com/client-objects/sample-app/conert-icon.png"
+    data-description="1 Box ticket"&gt; 
+  &lt;/script&gt;
+&lt;/form&gt;
+    </code>
+  </pre>
+  </div>
+
+  <script>
+    var modalStickyFooter = new tingle.modal({
+        footer: true,
+        stickyFooter: true,
+        closeMethods: []
+    });
+    var btn = document.querySelector('.modal1');
+    btn.addEventListener('click', function(){
+        modalStickyFooter.open();
+    });
+
+    modalStickyFooter.addFooterBtn('Close', 'tingle-btn tingle-btn--danger tingle-btn--pull-right', function(){
+        modalStickyFooter.close();
+    });
+
+    modalStickyFooter.setContent(document.querySelector('.tingle-demo-sticky1').innerHTML);
+  </script>
+
+  <div class="tingle-demo tingle-demo-sticky2">
+  <h2>Button with shipping &amp; billing</h2>
+  <p>Copy and paste it on an HTML page</p>
+  <pre>
+  <code class="html">
+&lt;form method="POST" action="/process.php"&gt;
+  &lt;script src="https://checkout.magpie.im/v2/checkout.js"
+    class="magpie-button"
+    data-name="My Online Store"
+    data-key="pk_test_97jCFUDY81vkqsQCLLFXQQ"
+    data-amount="250000"
+    data-currency="PHP"
+    data-icon="https://s3-us-west-2.amazonaws.com/client-objects/sample-app/online-store.png"
+    data-description="1-Month subscription; Up to 5 users"
+    data-billing="true"
+    data-pay-label="Pay"
+    data-button-label="Subscribe P2,500.00"&gt;
+  &lt;/script&gt;
+&lt;/form&gt;
+  </code>
+  </pre>
+  </div>
+
+  <script>
+      var modalStickyFooter2 = new tingle.modal({
+          footer: true,
+          stickyFooter: true,
+          closeMethods: []
+      });
+      var btn = document.querySelector('.modal2');
+      btn.addEventListener('click', function(){
+          modalStickyFooter2.open();
+      });
   
+      modalStickyFooter2.addFooterBtn('Close', 'tingle-btn tingle-btn--danger tingle-btn--pull-right', function(){
+          modalStickyFooter2.close();
+      });
   
+      modalStickyFooter2.setContent(document.querySelector('.tingle-demo-sticky2').innerHTML);
+    </script>
+
+  <script>hljs.initHighlightingOnLoad();</script>
+
 </body>
 </html>
