@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html >
 <head>
-  <!-- Site made with Mobirise Website Builder v4.7.1, https://mobirise.com -->
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="Mobirise v4.7.1, mobirise.com">
@@ -21,39 +20,13 @@
   <script src="assets/tingle/tingle.js"></script>
   <link rel="stylesheet" href="assets/tingle/tingle.css">
 
-  <!-- <script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js?skin=default"></script> -->
-  <!-- <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.12.0/build/styles/default.min.css"> -->
   <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.12.0/build/highlight.min.js"></script>
   <!-- <link rel="stylesheet" href="assets/css/obsidian.css"> -->
   <link rel="stylesheet" href="assets/css/atom-one-dark.css">
-  <style>
-  
-    .button1 {
-      background-color: #e7e7e7;
-      font-size: 12px;
-      padding: 5px 10px;
-      border-radius: 4px;
-      font-family: "Lucida Console", Monaco, monospace;
-      -webkit-transition-duration: 0.4s; /* Safari */
-      transition-duration: 0.4s;
-    }
-
-    .button1:hover {
-      background-color: black;
-      color: white;
-      }
-
-    td {
-      vertical-align: bottom;
-    }
-
-    .tingle-demo {
-      display: none;
-    }
-  
-  </style>
-  
+  <link rel="stylesheet" href="assets/css/extra.css">
+  <script>hljs.initHighlightingOnLoad();</script>
 </head>
+
 <body>
     <section class="menu1" id="menu1-g" data-rv-view="47">
 
@@ -148,7 +121,7 @@
 
 </section>
 
-<section class="mbr-section msg-box1" id="msg-box1-b" data-rv-view="29" style="background-color: rgb(255, 255, 255); padding-top: 50px; padding-bottom: 50px;">
+<section class="mbr-section msg-box1" id="msg-box1-b" data-rv-view="29" style="background-color: rgb(255, 255, 255); padding-top: 40px; padding-bottom: 40px;">
 
     
     <div class="container">
@@ -213,7 +186,7 @@
 
 </section>
 
-<section class="mbr-section pricingtable2" id="pricing-table2-c" data-rv-view="32" style="background-color: rgb(255, 252, 246); padding-top: 40px; padding-bottom: 120px;">
+<section class="mbr-section pricingtable2" id="pricing-table2-c" data-rv-view="32" style="background-color: rgb(255, 252, 246); padding-top: 40px; padding-bottom: 20px;">
 
     
 
@@ -241,7 +214,7 @@
           
           <div class="plan-btn text-xs-center">
 
-            <!--Buy button 1-->
+            <!-- PayButton for Start Package -->
             <form method="POST" action="/process.php">
               <script src="https://checkout.magpie.im/v2/checkout.js"
                   class="magpie-button"
@@ -254,9 +227,31 @@
                   data-pay-label="Pay"
                   data-button-label="Subscribe">
               </script>
-          </form>
+            </form>
           <br>
-
+          <form><input type="button" value="View Code" class="button1 start_modal"></form><br>
+          </div>
+          <div class="tingle-demo tingle-demo-start-modal">
+            <h2>PayButton 1</h2>
+            <p>Copy and paste it on an HTML page</p>          
+            <pre>
+              <code class="html">
+&lt;!-- PayButton for Start Package --&gt;
+&lt;form method="POST" action="/process.php"&gt;
+&lt;script src="https://checkout.magpie.im/v2/checkout.js"
+  class="magpie-button"
+  data-name="My Cloud Service"
+  data-key="pk_test_97jCFUDY81vkqsQCLLFXQQ"
+  data-amount="1900"
+  data-currency="USD"
+  data-icon="https://s3-us-west-2.amazonaws.com/client-objects/sample-app/cloud-icon.png"
+  data-description="Start (8GB / 4 / 15GB)"
+  data-pay-label="Pay"
+  data-button-label="Subscribe"&gt;
+&lt;/script&gt;
+&lt;/form&gt;
+  </code>
+            </pre>
           </div>
         </div>
 
@@ -291,8 +286,30 @@
               </script>
           </form>
           <br>
-          
+          <form><input type="button" value="View Code" class="button1 business_modal"></form><br>
           </div>
+          <div class="tingle-demo tingle-demo-business-modal">
+              <h2>PayButton 2</h2>
+              <p>Copy and paste it on an HTML page</p>          
+              <pre>
+                <code class="html">
+&lt;!-- PayButton for Business Package --&gt;
+&lt;form method="POST" action="/process.php"&gt;
+&lt;script src="https://checkout.magpie.im/v2/checkout.js"
+  class="magpie-button"
+  data-name="My Cloud Service"
+  data-key="pk_test_97jCFUDY81vkqsQCLLFXQQ"
+  data-amount="2900"
+  data-currency="USD"
+  data-icon="https://s3-us-west-2.amazonaws.com/client-objects/sample-app/cloud-icon.png"
+  data-description="Business (16GB / 10 / 20GB)"
+  data-pay-label="Pay"
+  data-button-label="Subscribe"&gt;
+&lt;/script&gt;
+&lt;/form&gt;
+                </code>
+              </pre>
+            </div>
         </div>
 
         <div class="plan-wrap col-xs-12 default col-lg-3" style="display: block;">
@@ -325,7 +342,30 @@
               </script>
           </form>
           <br>
+          <form><input type="button" value="View Code" class="button1 premium_modal"></form><br>
           </div>
+          <div class="tingle-demo tingle-demo-premium-modal">
+              <h2>PayButton 3</h2>
+              <p>Copy and paste it on an HTML page</p>          
+              <pre>
+                <code class="html">
+&lt;!-- PayButton for Premium Package --&gt;
+&lt;form method="POST" action="/process.php"&gt;
+&lt;script src="https://checkout.magpie.im/v2/checkout.js"
+  class="magpie-button"
+  data-name="My Cloud Service"
+  data-key="pk_test_97jCFUDY81vkqsQCLLFXQQ"
+  data-amount="3900"
+  data-currency="USD"
+  data-icon="https://s3-us-west-2.amazonaws.com/client-objects/sample-app/cloud-icon.png"
+  data-description="Premium (32GB / 20 / 40GB)"
+  data-pay-label="Pay"
+  data-button-label="Subscribe"&gt;
+&lt;/script&gt;
+&lt;/form&gt;
+                </code>
+              </pre>
+            </div>
         </div>
 
         <div class="plan-wrap col-xs-12 default col-lg-3" style="display: block;">
@@ -358,18 +398,41 @@
               </script>
           </form>
           <br>
+          <form><input type="button" value="View Code" class="button1 ultimate_modal"></form><br>
           </div>
+          <div class="tingle-demo tingle-demo-ultimate-modal">
+              <h2>PayButton 4</h2>
+              <p>Copy and paste it on an HTML page</p>          
+              <pre>
+                <code class="html">
+&lt;!-- PayButton for Ultimate Package --&gt;
+&lt;form method="POST" action="/process.php"&gt;
+&lt;script src="https://checkout.magpie.im/v2/checkout.js"
+  class="magpie-button"
+  data-name="My Cloud Service"
+  data-key="pk_test_97jCFUDY81vkqsQCLLFXQQ"
+  data-amount="3900"
+  data-currency="USD"
+  data-icon="https://s3-us-west-2.amazonaws.com/client-objects/sample-app/cloud-icon.png"
+  data-description="Ultimate (64GB / 50 / 60GB )"
+  data-pay-label="Pay"
+  data-button-label="Subscribe"&gt;
+&lt;/script&gt;
+&lt;/form&gt;
+                </code>
+              </pre>
+            </div>
         </div>
       </div>
     </div>   
 </section>
 
-<section class="mbr-section accordion toggle1" id="toggle1-f" data-rv-view="43" style="background-color: rgb(255, 255, 255); padding-top: 100px; padding-bottom: 100px;">
+<section class="mbr-section accordion toggle1" id="toggle1-f" data-rv-view="43" style="background-color: rgb(255, 255, 255); padding-top: 50px; padding-bottom: 50px;">
 
     
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2">
+            <div class="col-md-10 col-md-offset-1">
                 <div class="section-head text-center space30">
                     <h1 class="mbr-section-title display-4">More examples</h1>
                     
@@ -384,22 +447,41 @@
                         </div>
                         <div id="collapseOnetoggle1-f" class="panel-collapse noScroll collapse in" role="tabpanel" aria-labelledby="headingOne">
                             <div class="panel-body"><p>You can also create a button that requires your customer to enter shipping information. You will need to record the shipping data in your system.</p>
-                                <!--Shipping button-->
-                                <form method="POST" action="/process.php">
-                                  <script src="https://checkout.magpie.im/v2/checkout.js"
-                                      class="magpie-button"
-                                      data-name="My Online Store"
-                                      data-key="pk_test_97jCFUDY81vkqsQCLLFXQQ"
-                                      data-amount="450000"
-                                      data-currency="php"
-                                      data-icon="https://s3-us-west-2.amazonaws.com/client-objects/sample-app/red-store.jpg"
-                                      data-description="Nike Jordans, Size 10, Male"
-                                      data-billing="true"
-                                      data-shipping="true">
-                                  </script>
+                              <!--Shipping button-->
+                              <form method="POST" action="/process.php">
+                                <script src="https://checkout.magpie.im/v2/checkout.js"
+                                  class="magpie-button"
+                                  data-name="My Online Store"
+                                  data-key="pk_test_97jCFUDY81vkqsQCLLFXQQ"
+                                  data-amount="450000"
+                                  data-currency="php"
+                                  data-icon="https://s3-us-west-2.amazonaws.com/client-objects/sample-app/red-store.jpg"
+                                  data-description="Nike Jordans, Size 10, Male"
+                                  data-billing="true"
+                                  data-shipping="true">
+                                </script>
                               </form>
                               <br>
-                            </div>
+                                <!-- <p>Copy and paste it on an HTML page</p>           -->
+                                <pre>
+                                  <code class="html">
+&lt;!-- PayButton with Shipping Info --&gt;
+&lt;form method="POST" action="/process.php"&gt;
+&lt;script src="https://checkout.magpie.im/v2/checkout.js"
+  class="magpie-button"
+  data-name="My Online Store"
+  data-key="pk_test_97jCFUDY81vkqsQCLLFXQQ"
+  data-amount="450000"
+  data-currency="php"
+  data-icon="https://s3-us-west-2.amazonaws.com/client-objects/sample-app/red-store.jpg"
+  data-description="Nike Jordans, Size 10, Male"
+  data-billing="true"
+  data-shipping="true"&gt;
+&lt;/script&gt;
+&lt;/form&gt;
+                                  </code>
+                                </pre>
+                              </div>
                         </div>
                     </div>
                     <div class="toggle-panel panel-default" style="display: block;">
@@ -458,8 +540,25 @@
                                   </td>
                                 </tr>
                               </table>
-
                               <br>
+                              Replace with appropriate 3-letter currency code.
+                              <pre>
+                                <code class="html">
+&lt;form method="POST" action="/process.php"&gt;
+  &lt;script src="https://checkout.magpie.im/v2/checkout.js"
+    class="magpie-button"
+    data-name="My Music Library"
+    data-key="pk_test_97jCFUDY81vkqsQCLLFXQQ"
+    data-amount="5000"
+    data-currency="PHP"
+    data-icon="https://s3-us-west-2.amazonaws.com/client-objects/sample-app/music_icon.png"
+    data-description="Song of Love (3:55)"
+    data-button-label="Pay in PHP"&gt;
+  &lt;/script&gt;
+&lt;/form&gt;
+                                </code>
+                              </pre>
+
                           </div>
                         </div>
                     </div>
@@ -484,6 +583,24 @@
                                 </script>
                               </form>
                               <br>
+                              Here's the code:
+                              <pre>
+                                <code class="html">
+&lt;form method="POST" action="/process.php"&gt;
+  &lt;script src="https://checkout.magpie.im/v2/checkout.js"
+    class="magpie-button"
+    data-name="My Music Library"
+    data-key="pk_test_97jCFUDY81vkqsQCLLFXQQ"
+    data-amount="99"
+    data-currency="USD"
+    data-icon="https://s3-us-west-2.amazonaws.com/client-objects/sample-app/music_icon.png"
+    data-description="Song of Love (3:55)"
+    data-button-label="Buy Now"
+    data-email="juan@delacruz.com"&gt;
+  &lt;/script&gt;
+&lt;/form&gt;
+                                </code>
+                              </pre>
                             </div>
                         </div>
                     </div>
@@ -532,6 +649,24 @@
                               </tr>
                             </table>
                             <br>
+                            Following is the code for turning off "remember-me" feature:
+                            <pre>
+                              <code class="html">
+&lt;form method="POST" action="/process.php"&gt;
+  &lt;script src="https://checkout.magpie.im/v2/checkout.js"
+    class="magpie-button"
+    data-name="My Music Library"
+    data-key="pk_test_97jCFUDY81vkqsQCLLFXQQ"
+    data-amount="99"
+    data-currency="USD"
+    data-icon="https://s3-us-west-2.amazonaws.com/client-objects/sample-app/music_icon.png"
+    data-description="Song of Love (3:55)"
+    data-allow-remember-me="false"
+    data-button-label="Buy Now"
+  &lt;/script&gt;
+&lt;/form&gt;
+                              </code>
+                            </pre>
                           </div>
                         </div>
                     </div>
@@ -594,6 +729,23 @@
                                 </tr>
                               </table>
                               <br>
+                              <pre>
+                                <code class="html">
+&lt;form method="POST" action="/process.php"&gt;
+  &lt;script src="https://checkout.magpie.im/v2/checkout.js"
+    class="magpie-button"
+    data-name="My Music Library"
+    data-key="pk_test_97jCFUDY81vkqsQCLLFXQQ"
+    data-amount="99"
+    data-currency="USD"
+    data-icon="https://s3-us-west-2.amazonaws.com/client-objects/sample-app/music_icon.png"
+    data-description="Song of Love (3:55)"
+    data-allow-remember-me="false"
+    data-button-label="I Want This!"&gt;
+  &lt;/script&gt;
+&lt;/form&gt;
+                                </code>
+                              </pre>
                             </div>
                         </div>
                     </div>
@@ -642,6 +794,24 @@
                                 </tr>
                               </table>
                               <br>
+                              <pre>
+                                <code class="html">
+&lt;form method="POST" action="/process.php"&gt;
+  &lt;script src="https://checkout.magpie.im/v2/checkout.js"
+    class="magpie-button"
+    data-name="Manila Church"
+    data-key="pk_test_97jCFUDY81vkqsQCLLFXQQ"
+    data-amount="5000"
+    data-currency="PHP"
+    data-icon="https://s3-us-west-2.amazonaws.com/client-objects/sample-app/church.png"
+    data-description="P50 donation"
+    data-allow-remember-me="false"
+    data-button-label="Donate"
+    data-pay-label="Donate"&gt;
+  &lt;/script&gt;
+&lt;/form&gt;
+                                </code>
+                              </pre>
                             </div>
                         </div>
                     </div>
@@ -653,12 +823,10 @@
 </section>
 
 <footer class="mbr-small-footer mbr-section mbr-section-nopadding footer4" id="footer4-9" data-rv-view="39" style="background-color: rgb(255, 255, 255); padding-top: 1.75rem; padding-bottom: 1.75rem;">
-    
     <div class="container">
         <p class="text-xs-center">Copyright (c) 2018 Magpie.IM Pte. Ltd.</p>
     </div>
 </footer>
-
 
   <script src="assets/web/assets/jquery/jquery.min.js"></script>
   <script src="assets/tether/tether.min.js"></script>
@@ -747,7 +915,78 @@
       modalStickyFooter2.setContent(document.querySelector('.tingle-demo-sticky2').innerHTML);
     </script>
 
-  <script>hljs.initHighlightingOnLoad();</script>
+
+  <script>
+    var startModal = new tingle.modal({
+        footer: true,
+        stickyFooter: true,
+        closeMethods: []
+    });
+    var btn = document.querySelector('.start_modal');
+    btn.addEventListener('click', function(){
+      startModal.open();
+    });
+
+    startModal.addFooterBtn('Close', 'tingle-btn tingle-btn--danger tingle-btn--pull-right', function(){
+      startModal.close();
+    });
+
+    startModal.setContent(document.querySelector('.tingle-demo-start-modal').innerHTML);
+  </script>
+
+<script>
+    var businessModal = new tingle.modal({
+        footer: true,
+        stickyFooter: true,
+        closeMethods: []
+    });
+    var btn = document.querySelector('.business_modal');
+    btn.addEventListener('click', function(){
+      businessModal.open();
+    });
+
+    businessModal.addFooterBtn('Close', 'tingle-btn tingle-btn--danger tingle-btn--pull-right', function(){
+      businessModal.close();
+    });
+
+    businessModal.setContent(document.querySelector('.tingle-demo-business-modal').innerHTML);
+  </script>
+
+<script>
+    var premiumModal = new tingle.modal({
+        footer: true,
+        stickyFooter: true,
+        closeMethods: []
+    });
+    var btn = document.querySelector('.premium_modal');
+    btn.addEventListener('click', function(){
+      premiumModal.open();
+    });
+
+    premiumModal.addFooterBtn('Close', 'tingle-btn tingle-btn--danger tingle-btn--pull-right', function(){
+      premiumModal.close();
+    });
+
+    premiumModal.setContent(document.querySelector('.tingle-demo-premium-modal').innerHTML);
+  </script>
+
+<script>
+    var ultimateModal = new tingle.modal({
+        footer: true,
+        stickyFooter: true,
+        closeMethods: []
+    });
+    var btn = document.querySelector('.ultimate_modal');
+    btn.addEventListener('click', function(){
+      ultimateModal.open();
+    });
+
+    ultimateModal.addFooterBtn('Close', 'tingle-btn tingle-btn--danger tingle-btn--pull-right', function(){
+      ultimateModal.close();
+    });
+
+    ultimateModal.setContent(document.querySelector('.tingle-demo-ultimate-modal').innerHTML);
+  </script>
 
 </body>
 </html>

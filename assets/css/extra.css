@@ -1,0 +1,23 @@
+.button1 {
+  background-color: #e7e7e7;
+  font-size: 12px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-family: "Lucida Console", Monaco, monospace;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  border: 1px solid white;
+}
+
+.button1:hover {
+  background-color: black;
+  color: white;
+  }
+
+td {
+  vertical-align: bottom;
+}
+
+.tingle-demo {
+  display: none;
+}
