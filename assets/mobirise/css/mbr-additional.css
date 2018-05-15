@@ -745,25 +745,22 @@ a:hover {
 #menu1-m .dropdown-item[aria-expanded="true"] {
   color: #5aac98!important;
 }
-#header5-p .mbr-section-title,
-#header5-p .mbr-section-subtitle {
-  margin-bottom: 1rem;
-  color: #ffffff;
-}
-#header5-p .mbr-iconfont {
+#header4-y .mbr-iconfont {
   color: undefined;
   border-color: undefined;
 }
-#header5-p .mbr-table-cell {
+#header4-y .mbr-table-cell {
   vertical-align: middle;
+}
+#msg-box1-10 H1 {
+  color: #333333;
+}
+#footer4-9 p {
+  color: #000;
 }
 #header2-h .mbr-section-title,
 #header2-h .mbr-section-subtitle {
   color: #ffffff;
-}
-#header2-h .mbr-iconfont {
-  color: undefined;
-  border-color: undefined;
 }
 #header2-h .mbr-table-cell {
   vertical-align: middle;

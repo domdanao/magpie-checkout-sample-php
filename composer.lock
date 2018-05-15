@@ -1,0 +1,58 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "47beea0b6bb25f01d3b65deda75db37f",
+    "packages": [
+        {
+            "name": "flairlabs/magpie-php-sdk",
+            "version": "0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/flairlabs/magpie-php-sdk.git",
+                "reference": "6b2364f130403ba639a372667e3073c0526139bf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/flairlabs/magpie-php-sdk/zipball/6b2364f130403ba639a372667e3073c0526139bf",
+                "reference": "6b2364f130403ba639a372667e3073c0526139bf",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MagpieApi\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jaime Hing III",
+                    "email": "jaimehing@gmail.com"
+                }
+            ],
+            "description": "Magpie PHP SDK to allow developers to connect to Magpie REST APIs",
+            "homepage": "https://github.com/flairlabs/magpie-php-sdk",
+            "keywords": [
+                "magpie"
+            ],
+            "time": "2018-04-24T23:52:32+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": []
+}

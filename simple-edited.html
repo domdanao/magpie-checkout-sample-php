@@ -87,7 +87,7 @@
                           <tr>
                             <td>
                               <!--Simple form to create PayButton-->
-                              <form method="POST" action="/process.php">
+                              <form method="POST" action="/process_no_billing.php">
                                 <script src="https://checkout.magpie.im/v2/checkout.js"
                                   class="magpie-button"
                                   data-name="Rock & Roll Concert"
@@ -97,6 +97,12 @@
                                   data-icon="https://s3-us-west-2.amazonaws.com/client-objects/sample-app/conert-icon.png"
                                   data-description="1 Box ticket"> 
                                 </script>
+                                <!-- Put the data-amount as hidden input-->
+                                <input type="hidden" name="amount" value="225000">
+                                <!-- These are optional, but recommended. -->
+                                <input type="hidden" name="currency" value="PHP">
+                                <input type="hidden" name="description" value="1 Box ticket">
+                                <input type="hidden" name="name" value="Rock & Roll Concert">
                             </form>
                             </td>
                             <td style="padding:2px;"></td>
@@ -172,6 +178,9 @@
                               data-pay-label="Pay"
                               data-button-label="Subscribe P2,500.00">
                             </script>
+                            <input type="hidden" name="amount" value="250000">
+                            <input type="hidden" name="description" value="1-Month subscription; Up to 5 users">
+                            <input type="hidden" name="name" value="My Online Store">
                           </form>
                         </td>
                         <td style="padding:5px;"></td>
