@@ -138,11 +138,30 @@ $content .= $reply["message"]."<br>";
     <script src="assets/tingle/tingle.js"></script>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/tingle/tingle.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
-    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.12.0/build/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="assets/web/assets/jquery/jquery.min.js"></script>
+    <!-- <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css"> -->
+    <!-- <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.12.0/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script> -->
+
+    <script type="text/javascript">
+    $(window).load(function() {
+      $(".loader").fadeOut("slow");
+      modal.open();
+    })
+    </script>
+    <style>
+    .loader {
+      position: fixed;
+      left: 0px;
+      top: 0px;
+      width: 100%;
+      height: 100%;
+      z-index: 9999;
+      background: url('assets/images/loader.gif') 50% 50% no-repeat rgb(249,249,249);
+    }
+    </style>
   </head>
-  <body onload="modal.open();">
+  <body>
 
   <script>
   var modal = new tingle.modal({
@@ -154,6 +173,7 @@ $content .= $reply["message"]."<br>";
 
   modal.addFooterBtn('Back', 'tingle-btn tingle-btn--pull-right', function() {
     window.history.back();
+
 });
 
   </script>
