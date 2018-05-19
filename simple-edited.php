@@ -50,13 +50,13 @@
                         <div class="hamburger-icon"></div>
                     </button>
 
-                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-xl" id="exCollapsingNavbar">
-                        <li class="nav-item"><a class="nav-link link" href="index.html">OVERVIEW</a></li>
-                        <li class="nav-item"><a class="nav-link link getting-started markdown_modal" href="#">GETTING STARTED</a></li>
-                        <li class="nav-item"><a class="nav-link link" href="simple-edited.html">SIMPLE INTEGRATION</a></li>
-                        <li class="nav-item"><a class="nav-link link" href="custom-edited.html">CUSTOM INTEGRATION</a></li>
-                        <li class="nav-item"><a class="nav-link link" href="backend.html">PHP BACKEND</a></li>
-                    </ul>
+                <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-xl" id="exCollapsingNavbar">
+                    <li class="nav-item"><a class="nav-link link" href="index.php">OVERVIEW</a></li>
+                    <li class="nav-item"><a class="nav-link link getting-started markdown_modal" href="#">GETTING STARTED</a></li>
+                    <li class="nav-item"><a class="nav-link link" href="simple-edited.php">SIMPLE INTEGRATION</a></li>
+                    <li class="nav-item"><a class="nav-link link" href="custom-edited.php">CUSTOM INTEGRATION</a></li>
+                    <li class="nav-item"><a class="nav-link link" href="backend.php">PHP BACKEND</a></li>
+                </ul>
 
                     <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
                         <div class="close-icon"></div>

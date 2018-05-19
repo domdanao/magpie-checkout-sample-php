@@ -1,3 +1,11 @@
+<?php
+// Simple CSRF protection
+session_start();
+if (empty($_SESSION['token'])) {
+    $_SESSION['token'] = bin2hex(random_bytes(32));
+}
+$token = $_SESSION['token'];
+?>
 <!DOCTYPE html>
 <html >
 <head>
@@ -8,9 +16,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
   <link rel="shortcut icon" href="assets/images/magpie-logo-round-big-128x128.png" type="image/x-icon">
   <meta name="description" content="">
-  <title>PHP Sample App</title>
+  <title>Home</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Franklin:400,400i,600,600i">
-  <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/web/assets/mobirise-icons/mobirise-icons.css">
   <link rel="stylesheet" href="assets/tether/tether.min.css">
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/soundcloud-plugin/style.css">
@@ -31,65 +39,120 @@
   
 </head>
 <body>
-    <section class="menu1" id="menu1-g" data-rv-view="47">
+<section class="menu1" id="menu1-g" data-rv-view="47">
 
-        <nav class="navbar navbar-dropdown transparent navbar-fixed-top bg-color">
-            <div class="container-fluid">
-    
-                <div class="mbr-table">
-                    <div class="mbr-table-cell logo">
-    
-                        <div class="navbar-brand">
-                            <a href="https://magpie.im" class="navbar-logo"><img src="assets/images/magpie-logo-round-big-128x128.png" alt="Magpie Icon" style="height: 5rem;"></a>
-                            
-                        </div>
-    
-                    </div>
-                    <div class="mbr-table-cell text">
-    
-                        <button class="navbar-toggler pull-xs-right" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
-                            <div class="hamburger-icon"></div>
-                        </button>
-    
-                        <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-xl" id="exCollapsingNavbar">
-                            <li class="nav-item"><a class="nav-link link" href="index.html">OVERVIEW</a></li>
-                            <li class="nav-item"><a class="nav-link link getting-started markdown_modal" href="#">GETTING STARTED</a></li>
-                            <li class="nav-item"><a class="nav-link link" href="simple-edited.html">SIMPLE INTEGRATION</a></li>
-                            <li class="nav-item"><a class="nav-link link" href="custom-edited.html">CUSTOM INTEGRATION</a></li>
-                            <li class="nav-item"><a class="nav-link link" href="backend.html">PHP BACKEND</a></li>
-                        </ul>
-    
-                        <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
-                            <div class="close-icon"></div>
-                        </button>
-    
-                    </div>
-    
+<nav class="navbar navbar-dropdown transparent navbar-fixed-top bg-color">
+    <div class="container-fluid">
+
+        <div class="mbr-table">
+            <div class="mbr-table-cell logo">
+
+                <div class="navbar-brand">
+                    <a href="https://magpie.im" class="navbar-logo"><img src="assets/images/magpie-logo-round-big-128x128.png" alt="Magpie Icon" style="height: 5rem;"></a>
+                    
                 </div>
-    
+
             </div>
-        </nav>
-    
-    </section>
+            <div class="mbr-table-cell text">
 
-<section class="mbr-section mbr-section-hero mbr-section-full header5 mbr-after-navbar" id="header5-p" data-rv-view="73" style="background: linear-gradient(to right top, rgb(8, 74, 110), rgb(36, 163, 131)) rgb(8, 74, 110);">
+                <button class="navbar-toggler pull-xs-right" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+                    <div class="hamburger-icon"></div>
+                </button>
+
+                <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-xl" id="exCollapsingNavbar">
+                    <li class="nav-item"><a class="nav-link link" href="index.php">OVERVIEW</a></li>
+                    <li class="nav-item"><a class="nav-link link getting-started markdown_modal" href="#">GETTING STARTED</a></li>
+                    <li class="nav-item"><a class="nav-link link" href="simple-edited.php">SIMPLE INTEGRATION</a></li>
+                    <li class="nav-item"><a class="nav-link link" href="custom-edited.php">CUSTOM INTEGRATION</a></li>
+                    <li class="nav-item"><a class="nav-link link" href="backend.php">PHP BACKEND</a></li>
+                </ul>
+
+                <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+                    <div class="close-icon"></div>
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+</nav>
+
+</section>
+            
+
+<section class="mbr-section mbr-section-hero mbr-section-full header1 mbr-after-navbar" id="header1-6" data-rv-view="17" style="background-image: url(assets/images/01.jpg);">
 
     
-        
+
     <div class="mbr-table-cell">
+
         <div class="container">
             <div class="row heading">
-                <div class="col-md-10 text-xs-center col-md-offset-1">
+                <div class="col-md-10 col-md-offset-1 text-xs-center">
 
-                    <h1 class="mbr-section-title display-1 heading-title">Coming Soon!</h1>
-                    <p class="mbr-section-subtitle sub-2 heading-text">Give me a few days to make the end-to-end payment experience via Magpie Checkout v2.</p>
-                    <div class="mbr-section-btn"><a class="btn btn-lg btn-primary" href="/index.html"><span class="fa fa-home mbr-iconfont mbr-iconfont-btn"></span>Go Back Home</a></div>
+                    <h1 class="mbr-section-title display-1 heading-title"><br>Checkout v2 Examples</h1>
+                    <p class="mbr-section-subtitle sub-2 heading-text">Magpie's Checkout v2 provides you flexible options to make web checkout experiences easy to create and manage. Not only is it convenient, it makes your web apps look good, too!</p>
+                    
                 </div>
             </div>
         </div>
-    </div>    
+
+        <div class="container-fluid">
+            <div class="col-xs-12 col-lg-10 col-lg-offset-1">
+                <div class="row">
+
+                    <div class="mbr-cards-col col-xs-12 col-lg-4">
+                        <div class="card row">
+                            <div class="card-img col-xs-3"><a href="simple-edited.html" class="mbri-mobile mbr-iconfont" style="font-size: 40px;"></a></div>
+                            <div class="card-box col-xs-9">
+                                <h4 class="card-title mbr-section-subtitle sub-2"><a href="simple-edited.html"><strong>Simple Integration</strong></a></h4>
+                                <p class="card-text mbr-section-text text-1">Simple integration lets you easily create PayButtons that trigger Checkout v2, letting you safely collect payment information without heavy PCI compliance.</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mbr-cards-col col-xs-12 col-lg-4">
+                        <div class="card row">
+                            <div class="card-img col-xs-3"><a href="custom-edited.html" class="mbri-responsive mbr-iconfont" style="font-size: 40px;"></a></div>
+                            <div class="card-box col-xs-9">
+                                <h4 class="card-title mbr-section-subtitle sub-2"><a href="custom-edited.html"><strong>Custom Integration</strong></a></h4>
+                                <p class="card-text mbr-section-text text-1">Custom integration let's you dictate the look and feel of your app, and taps into the power of your JavaScript skills to enable your own user experience.</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mbr-cards-col col-xs-12 col-lg-4">
+                        <div class="card row">
+                            <div class="card-img col-xs-3"></div>
+                            <div class="card-box col-xs-9">
+                                <h4 class="card-title mbr-section-subtitle sub-2"><a href="backend.html"><strong>With PHP backend</strong></a></h4>
+                                <p class="card-text mbr-section-text text-1">After triggering Checkout v2 and getting a token, you need your server to charge your customer's credit or debit card. We give you a sample backend based on PHP.</p>
+                                
+                            </div>
+                        </div>
+                    </div>
+
+                    
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    
 
 </section>
+
+<footer class="mbr-small-footer mbr-section mbr-section-nopadding footer4" id="footer4-9" data-rv-view="24" style="background-color: rgb(255, 227, 171); padding-top: 1.75rem; padding-bottom: 1.75rem;">
+    
+    <div class="container">
+        <p class="text-xs-center">Copyright (c) 2018 Magpie.IM Pte. Ltd.</p>
+    </div>
+</footer>
 
 
   <script src="assets/web/assets/jquery/jquery.min.js"></script>
@@ -323,5 +386,6 @@ document.getElementById(&#39;my-button&#39;).addEventListener(&#39;click&#39;, f
     markdownModal.setContent(document.querySelector('.tingle-demo-markdown-modal').innerHTML);
     // markdownModal.setContent('<iframe width="100%" height="400" src="/checkout-v2-guide.html" frameborder="0" allowfullscreen></iframe>');
   </script>
+  
 </body>
 </html>
