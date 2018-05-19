@@ -1,5 +1,10 @@
 <?php
 
+session_start();
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 // Make sure your secret keys could not be seen by unauthorized people
 // Do not push config.php to your repository!
 require 'config.php';
@@ -28,97 +33,110 @@ if (empty($_POST)) {
   $reply["title"] = "Error";
   $reply["message"] = "No POST data passed.";
 } else {
-  // Check token existence
-  $token = "";
-  if (isset($_POST["magpie_token"])) {
-    $token = $_POST["magpie_token"];
-  } else {
-    $reply["title"] = "Error";
-    $reply["message"] = "Token not found";
-  }
+  // Check for SESSION token
+  if (!empty($_POST['token'])) {
 
-  // Check email
-  $email = "";
-  if (isset($_POST["magpie_email"])) {
-    $email = $_POST["magpie_email"];
-  } else {
-    $reply["title"] = "Error";
-    $reply["message"] = "Email not supplied";
-  }
+    if (hash_equals($_SESSION['token'], $_POST['token'])) {
+      // Check token existence
+      $token = "";
+      if (isset($_POST["magpie_token"])) {
+        $token = $_POST["magpie_token"];
+      } else {
+        $reply["title"] = "Error";
+        $reply["message"] = "Token not found";
+      }
 
-  // Check amount
-  $amount = 0;
-  if (isset($_POST["amount"])) {  // Match with the input name from HTML
-    $amount = $_POST["amount"];
-    $amount = (int)$amount;
-    if ($amount <= 0) {
-      $reply["title"] = "Error";
-      $reply["messge"] = "Amount must be greater than zero.";
-    }
-  } else {
-    $reply["title"] = "Error";
-    $reply["message"] = "Amount not supplied";
-  }
-  
-  // Check currency
-  $currency = "PHP";  // Default
-  if (isset($_POST["currency"])) {  // Match with the input name from HTML
-    $currency = $_POST["currency"];
-  }
+      // Check email
+      $email = "";
+      if (isset($_POST["magpie_email"])) {
+        $email = $_POST["magpie_email"];
+      } else {
+        $reply["title"] = "Error";
+        $reply["message"] = "Email not supplied";
+      }
 
-  // Check description
-  $description = "";
-  if (isset($_POST["description"])) { // Match with the input name from HTML
-    $description = $_POST["description"];
-  } // If you want this to be mandatory, do an else and populate $reply array
+      // Check amount
+      $amount = 0;
+      if (isset($_POST["amount"])) {  // Match with the input name from HTML
+        $amount = $_POST["amount"];
+        $amount = (int)$amount;
+        if ($amount <= 0) {
+          $reply["title"] = "Error";
+          $reply["messge"] = "Amount must be greater than zero.";
+        }
+      } else {
+        $reply["title"] = "Error";
+        $reply["message"] = "Amount not supplied";
+      }
+      
+      // Check currency
+      $currency = "PHP";  // Default
+      if (isset($_POST["currency"])) {  // Match with the input name from HTML
+        $currency = $_POST["currency"];
+      }
 
-  // Check store name
-  $store = "";
-  if (isset($_POST["name"])) {  // Match with the input name from HTML
-    $store = $_POST["name"];
-  } // If you want this to be mandatory, do an else and populate $reply array
+      // Check description
+      $description = "";
+      if (isset($_POST["description"])) { // Match with the input name from HTML
+        $description = $_POST["description"];
+      } // If you want this to be mandatory, do an else and populate $reply array
 
-  // $reply variable is empty, so everything's OK
-  if (empty($reply)) {
-    // Please read up on the Magpie PHP SDK
-    // Check out https://github.com/flairlabs/magpie-php-sdk
-    
-    // Create the instance
-    $magpie = new MagpieApi\Magpie($magpie_public_key, $magpie_secret_key, false, 'v1.1');
-    
-    // Create charge
-    $response = $magpie->charge->create(
-      $amount,
-      $currency,
-      $token,
-      $description,
-      $statement_descriptor,
-      true
-    );
+      // Check store name
+      $store = "";
+      if (isset($_POST["name"])) {  // Match with the input name from HTML
+        $store = $_POST["name"];
+      } // If you want this to be mandatory, do an else and populate $reply array
 
-    // Populate the responses into an array
-    $magpie_reply = $response->toArray();
-    $full_reply = json_encode($magpie_reply, JSON_PRETTY_PRINT);
-    $full_reply = trim($full_reply);
-    
-    if ($response->isSuccess()) {
-      // Record transaction in your database.
-      // Send an email to your customer. Make it nice. :)
+      // $reply variable is empty, so everything's OK
+      if (empty($reply)) {
+        // Please read up on the Magpie PHP SDK
+        // Check out https://github.com/flairlabs/magpie-php-sdk
+        
+        // Create the instance
+        $magpie = new MagpieApi\Magpie($magpie_public_key, $magpie_secret_key, false, 'v1.1');
+        
+        // Create charge
+        $response = $magpie->charge->create(
+          $amount,
+          $currency,
+          $token,
+          $description,
+          $statement_descriptor,
+          true
+        );
 
-      // Use variable from the $magpie_reply array for data in your email, etc.
+        // Populate the responses into an array
+        $magpie_reply = $response->toArray();
+        $full_reply = json_encode($magpie_reply, JSON_PRETTY_PRINT);
+        $full_reply = trim($full_reply);
+        
+        if ($response->isSuccess()) {
+          // Record transaction in your database.
+          // Send an email to your customer. Make it nice. :)
 
-      $item = $description;
-      $value = $amount/100;
-      $value = number_format($value, 2, ".", ",");
-      $transaction_id = $magpie_reply["id"];
+          // Use variable from the $magpie_reply array for data in your email, etc.
 
-      $reply["title"] = "Success - Payment Received";
-      $reply["message"] = "<b><em>Thanks for your purchase!</em></b><br><br>Item: <b>$item</b><br>Amount Paid: <b>$currency $value</b><br>Transaction #: <b>$transaction_id</b><br>This will appear in your card statement as <b>$statement_descriptor</b>.";
+          $item = $description;
+          $value = $amount/100;
+          $value = number_format($value, 2, ".", ",");
+          $transaction_id = $magpie_reply["id"];
+
+          $reply["title"] = "Success - Payment Received";
+          $reply["message"] = "<b><em>Thanks for your purchase!</em></b><br><br>Item: <b>$item</b><br>Amount Paid: <b>$currency $value</b><br>Transaction #: <b>$transaction_id</b><br>This will appear in your card statement as <b>$statement_descriptor</b>.";
+        } else {
+          // Something went wrong with the processing
+          $reply["title"] = "Payment Processing Error";
+          $reply["message"] = $magpie_reply["message"];  // Error response from gateway
+        }
+      }
+
     } else {
-      // Something went wrong with the processing
-      $reply["title"] = "Payment Processing Error";
-      $reply["message"] = $magpie_reply["message"];  // Error response from gateway
+
+      // SESSION mismatch
+      $reply["title"] = "Error";
+      $reply["message"] = "Sorry, you are now allowed access to this resource.";
     }
+
   }
 }
 

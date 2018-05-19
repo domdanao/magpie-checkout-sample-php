@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (empty($_SESSION['token'])) {
+  $_SESSION['token'] = bin2hex(random_bytes(32));
+}
+$token = $_SESSION['token'];
+?>
 <!DOCTYPE html>
 <html >
 <head>
@@ -87,7 +94,7 @@
                           <tr>
                             <td>
                               <!--Simple form to create PayButton-->
-                              <form method="POST" action="/process_no_billing.php">
+                              <form method="POST" action="/process.php">
                                 <script src="https://checkout.magpie.im/v2/checkout.js"
                                   class="magpie-button"
                                   data-name="Rock & Roll Concert"
@@ -103,6 +110,7 @@
                                 <input type="hidden" name="currency" value="PHP">
                                 <input type="hidden" name="description" value="1 Box ticket">
                                 <input type="hidden" name="name" value="Rock & Roll Concert">
+                                <input type="hidden" name="token" value="<?php echo $token; ?>">
                             </form>
                             </td>
                             <td style="padding:2px;"></td>

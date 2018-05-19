@@ -104,9 +104,9 @@ $token = $_SESSION['token'];
 
                     <div class="mbr-cards-col col-xs-12 col-lg-4">
                         <div class="card row">
-                            <div class="card-img col-xs-3"><a href="simple-edited.html" class="mbri-mobile mbr-iconfont" style="font-size: 40px;"></a></div>
+                            <div class="card-img col-xs-3"><a href="simple-edited.php" class="mbri-mobile mbr-iconfont" style="font-size: 40px;"></a></div>
                             <div class="card-box col-xs-9">
-                                <h4 class="card-title mbr-section-subtitle sub-2"><a href="simple-edited.html"><strong>Simple Integration</strong></a></h4>
+                                <h4 class="card-title mbr-section-subtitle sub-2"><a href="simple-edited.php"><strong>Simple Integration</strong></a></h4>
                                 <p class="card-text mbr-section-text text-1">Simple integration lets you easily create PayButtons that trigger Checkout v2, letting you safely collect payment information without heavy PCI compliance.</p>
                                 
                             </div>
@@ -115,9 +115,9 @@ $token = $_SESSION['token'];
 
                     <div class="mbr-cards-col col-xs-12 col-lg-4">
                         <div class="card row">
-                            <div class="card-img col-xs-3"><a href="custom-edited.html" class="mbri-responsive mbr-iconfont" style="font-size: 40px;"></a></div>
+                            <div class="card-img col-xs-3"><a href="custom-edited.php" class="mbri-responsive mbr-iconfont" style="font-size: 40px;"></a></div>
                             <div class="card-box col-xs-9">
-                                <h4 class="card-title mbr-section-subtitle sub-2"><a href="custom-edited.html"><strong>Custom Integration</strong></a></h4>
+                                <h4 class="card-title mbr-section-subtitle sub-2"><a href="custom-edited.php"><strong>Custom Integration</strong></a></h4>
                                 <p class="card-text mbr-section-text text-1">Custom integration let's you dictate the look and feel of your app, and taps into the power of your JavaScript skills to enable your own user experience.</p>
                                 
                             </div>
@@ -128,7 +128,7 @@ $token = $_SESSION['token'];
                         <div class="card row">
                             <div class="card-img col-xs-3"></div>
                             <div class="card-box col-xs-9">
-                                <h4 class="card-title mbr-section-subtitle sub-2"><a href="backend.html"><strong>With PHP backend</strong></a></h4>
+                                <h4 class="card-title mbr-section-subtitle sub-2"><a href="backend.php"><strong>With PHP backend</strong></a></h4>
                                 <p class="card-text mbr-section-text text-1">After triggering Checkout v2 and getting a token, you need your server to charge your customer's credit or debit card. We give you a sample backend based on PHP.</p>
                                 
                             </div>
