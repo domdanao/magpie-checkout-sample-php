@@ -1,14 +1,30 @@
-# magpie-checkout-sample-php
-Magpie Checkout v2 sample PHP app
+# Magpie Sample PHP App
 
-This is a work in progress.
 
-Right now, you can trigger the Checkout form, but not make test payments.
+## Get an account
 
-End-to-end coming soon.
+Get your API keys from https://control.magpie.im.
 
-Update: You can do an end-to-end test transaction in the simple integration.
+Register if you do not have an account yet. :smile: Go to https://control.magpie.im/register.
 
-In any case, feel free to play around with it. You can `git clone` this repo and have a blast.
+Once in the dashboard find your keys. Click on the settings icon and find them there.
 
-Cheers!
+Use the test keys for development. Use the live keys for production.
+
+
+## Install
+```
+git clone https://github.com/domdanao/magpie-checkout-sample-php.git
+cd magpie-sample-app
+composer install
+```
+
+## Edit
+Open `magpie-client.js`. Insert your PUBLISHABLE key in the proper variable.
+
+Open `config_sample.php`. Insert your PUBLISHABLE and SECRET keys in the relevant variables. Save the file as `config.php`.
+
+## Run
+Set your web server home directory.
+
+Note: Your web server must be connected to the Internet.
