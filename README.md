@@ -3,9 +3,9 @@
 
 ## Get an account
 
-Get your API keys from https://control.magpie.im.
+Get your API keys from https://dashboard.magpie.im.
 
-Register if you do not have an account yet. :smile: Go to https://control.magpie.im/register.
+Register if you do not have an account yet. :smile:
 
 Once in the dashboard find your keys. Click on the settings icon and find them there.
 
